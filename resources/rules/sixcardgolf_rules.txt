@@ -1,0 +1,14 @@
+How to Play Six Card Golf
+
+ - Six Card Golf is a 2-4 player card game that uses one full 52 card deck with two jokers. The game is played in a series of usually 9 or 18 rounds. The goal of the game is to have the lowest total score when the game ends.
+ 
+ - Each round starts with each player being dealt six cards face-down in a grid of 2 rows and 3 columns. Players may not look at the face down side of the cards. Once every player has their cards, each player flips over two of their cards and the top card of the remaining deck is flipped over into the discard pile.
+ 
+ - Starting with the player to the left of whichever player went first last round, or the player to the left of the dealer for the first round, players take turns in a clockwise order. On a player's turn that player may take the top card of the discard pile or draw the top card of the deck. Once the player has taken a card they must either discard it by placing it on top of the discard pile or swap it with one of the cards in their grid and placing the swapped out card in the discard pile. When swapping cards with those in your grid, the new card stays face up and take the place of the swapped out card in the grid. The swapped out card goes on top of the discard pile face up. Note that players are not allowed to look at face down cards before swapping them out.
+ 
+ - The round will start to end when all of a player's cards in their grid are face up. Once a player has all of their cards face up Every other player gets one last turn turn. Players are scored based upon the cards in their grid once the round ends.
+ 
+ - Number cards (ace through ten) are worth a number of points equal to the number on the card. Jacks and Queens are worth ten points each. Kings are worth zero points. Jokers are worth -2 points. If both cards in a column are the same number, such as both cards being jacks or both cards being fives, then both cards are worth zero points. The only exception to this is jokers. Jokers are still worth -2 points when both cards in a column are jokers. Add each player's score for the round to their total score.
+ 
+ - Here is a scoring example. The top row left to right is a five, joker, and seven. The bottom row left to right is a five, queen, king. The cards in the first column are worth zero since they match. The second column does not have a match and is worth 8 points because the queen is worth 10 points and the joker is worth -2 points. The third column is worth 7 points because the king is worth 0 points and the seven is worth 7 points. This hand has a total value of 15 points.
+ 

@@ -1,0 +1,15 @@
+How to Play Blackjack
+
+ - Blackjack is a card game that uses one to six standard playing card decks without jokers.
+
+ - The goal of the game is to end your turn with a hand of cards with a total value that is the closest to 21 without going over. Kings, queens, and jacks are worth 10 points, number cards 2 through 10 are worth the number printed on the card in points, and aces are worth 11 or 1 depending on which value will benefit your hand more. For example, a hand consisting of an ace and a five would be worth 16 rather than 6 because it is closer to 21. On the other hand, a hand consisting of an ace, a queen, and a seven would be worth 18 rather than 28 because valuing the ace as an 11 in this hand would make the hand value greater than 21.
+
+ - The game is played in rounds. Each round starts with players placing their bets. Once all of the bets have been placed cards are dealt. Each player gets two cards face up. The dealer gets one card face up and one card face down. Players then take their turns. Once every player takes their turn, the dealer takes his turn and the player's hands of cards are compared to the dealer's hand.
+
+ - On a player's turn they may choose to hit or stay. If the player hits, then the dealer deals that player another card. When a player stays, their turn ends. A player busts if their hand value goes over 21. A player's turn immediately ends when they bust. If the player's two starting cards are an ace and a card worth 10 points (tens, kings, queens, and jacks), then that player has a Blackjack and will win 1.5 times their bet if the dealer does not also have a Blackjack.
+ 
+ - Player's also have the option to split their starting hand into two separate hands with the same bet if their starting hand consists of two of the same card (two fives, or two kings, etc). Each hand gets an additional card and that player then takes a turn for each of those two hands. Player's have the option to double down on hands of two cards with a total value of 9, 10, or 11. When a player doubles down, their bet is doubled and they get one more card which is not revealed until the end of the round.
+ 
+ - The dealer reveals his hand and takes cards until his hand is 17 or greater or busts (goes over 21) once all players have finished their turns.
+ 
+ - If a player busts, then they lose their bet. If the dealer has a Blackjack, then every player with a Blackjack takes back their bet and every player without a Blackjack loses their bet. If a player has a Blackjack and the dealer does not, then that player takes back their bet and wins 1.5 times their bet. If the dealer busts, then all players that did not bust take back their bet and win their bet worth of additional points. If the dealer does not bust, then all players that did not bust and have a hand value greater than the dealer's take their bet and win that amount worth of additional points. Players that did not bust and have a hand value less than the dealer's lose their bet.

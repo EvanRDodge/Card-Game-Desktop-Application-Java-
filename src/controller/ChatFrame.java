@@ -37,7 +37,6 @@ public class ChatFrame extends JFrame implements ActionListener, SocketedControl
 	private JButton buttonDisconnect = new JButton("Disconnect");
 	private JRadioButton radioHostChat = new JRadioButton("Host Chat");
 	private JRadioButton radioJoinChat = new JRadioButton("Join Chat");
-	private JTextField textFieldHostAddress = new JTextField();
 	private JTextField textFieldJoinAddress = new JTextField();
 	private JButton buttonHostChat = new JButton("Host");
 	private JButton buttonJoinChat = new JButton("Connect");
@@ -78,18 +77,6 @@ public class ChatFrame extends JFrame implements ActionListener, SocketedControl
 		radioJoinChat.setEnabled(false);
 		radioJoinChat.addActionListener(this);
 		
-		String hostIP = "";
-		try {
-			InetAddress inetAddress;
-			inetAddress = InetAddress.getLocalHost();
-	        hostIP = inetAddress.getHostAddress();
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-		}
-		textFieldHostAddress.setText(hostIP);
-		textFieldHostAddress.setFont(font_Ariel_16P);
-		textFieldHostAddress.setEditable(false);
-		textFieldHostAddress.setEnabled(false);
 		textFieldJoinAddress.setFont(font_Ariel_16P);
 		textFieldJoinAddress.setEnabled(false);
 		
@@ -156,10 +143,6 @@ public class ChatFrame extends JFrame implements ActionListener, SocketedControl
 		gbc.fill = GridBagConstraints.BOTH;
 		gbc.weightx = 4;
 		gbc.gridx = 1;
-		gbc.gridy = 2;
-		add(textFieldHostAddress, gbc);
-		
-		gbc.gridx = 1;
 		gbc.gridy = 3;
 		add(textFieldJoinAddress, gbc);
 
@@ -199,26 +182,26 @@ public class ChatFrame extends JFrame implements ActionListener, SocketedControl
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		if(event.getSource() == buttonSetName) {
-			if(textFieldName.getText() != "") {
+			if(!textFieldName.getText().equals("")) {
 				textAreaChat.append("--!-- Name Changed to: " + textFieldName.getText() + "\n");
 				//unlock ui if this is the first successful name change
-				if(chatName == "") {
+				if(chatName.equals("")) {
 					radioJoinChat.setEnabled(true);
 					radioHostChat.setEnabled(true);
 					if(radioHostChat.isSelected()) {
-						textFieldHostAddress.setEnabled(true);
 						textFieldJoinAddress.setEnabled(false);
 						buttonHostChat.setEnabled(true);
 						buttonJoinChat.setEnabled(false);
 					}
 					else {
-						textFieldHostAddress.setEnabled(false);
 						textFieldJoinAddress.setEnabled(true);
 						buttonHostChat.setEnabled(false);
 						buttonJoinChat.setEnabled(true);
 					}
 				}
 				chatName = textFieldName.getText();
+				buttonSetName.setEnabled(false);
+				textFieldName.setEnabled(false);
 			}
 		}
 		else if(event.getSource() == buttonDisconnect) {
@@ -231,13 +214,11 @@ public class ChatFrame extends JFrame implements ActionListener, SocketedControl
 			radioHostChat.setEnabled(true);
 			radioJoinChat.setEnabled(true);
 			if(radioHostChat.isSelected()) {
-				textFieldHostAddress.setEnabled(true);
 				textFieldJoinAddress.setEnabled(false);
 				buttonJoinChat.setEnabled(false);
 				buttonHostChat.setEnabled(true);
 			}
 			else if(radioJoinChat.isSelected()) {
-				textFieldHostAddress.setEnabled(false);
 				textFieldJoinAddress.setEnabled(true);
 				buttonHostChat.setEnabled(false);
 				buttonJoinChat.setEnabled(true);
@@ -245,15 +226,6 @@ public class ChatFrame extends JFrame implements ActionListener, SocketedControl
 			buttonDisconnect.setEnabled(false);
 		}
 		else if(event.getSource() == buttonHostChat) {
-			String hostIP = "";
-			try {
-				InetAddress inetAddress;
-				inetAddress = InetAddress.getLocalHost();
-		        hostIP = inetAddress.getHostAddress();
-			} catch (UnknownHostException e) {
-				e.printStackTrace();
-			}
-			textFieldHostAddress.setText(hostIP);
 			isHost = true;
 			//create thread to listen for and accept connection requests
 			ChatFrame frameHandle = this;
@@ -276,7 +248,7 @@ public class ChatFrame extends JFrame implements ActionListener, SocketedControl
 					}
 				}
 			}.start();
-			textAreaChat.append("--!-- Server established at IP address: " + hostIP + "\n");
+			textAreaChat.append("--!-- Server established\n");
 			//lock and unlock parts of ui
 			textFieldJoinAddress.setEnabled(false);
 			radioHostChat.setEnabled(false);
@@ -325,13 +297,11 @@ public class ChatFrame extends JFrame implements ActionListener, SocketedControl
 			}
 		}
 		else if(event.getSource() == radioHostChat) {
-			textFieldHostAddress.setEnabled(true);
 			textFieldJoinAddress.setEnabled(false);
 			buttonHostChat.setEnabled(true);
 			buttonJoinChat.setEnabled(false);
 		}
 		else if(event.getSource() == radioJoinChat) {
-			textFieldHostAddress.setEnabled(false);
 			textFieldJoinAddress.setEnabled(true);
 			buttonHostChat.setEnabled(false);
 			buttonJoinChat.setEnabled(true);
